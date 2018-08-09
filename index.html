@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <head>
-
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <link href="main.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
+   <nav id="navbar">
+        <header class="nav-header">
+                <h1>Python Tutorial</h1>
+        </header>
+        <main id="nav-main">
+          <ul id="nav-list">
+            <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#Numbers" class="nav-link">Numbers</a></li>
+            <li><a href="#First_Steps_Towards_Programming" class="nav-link">First Steps Towards Programming</a></li>
+            <li><a href="#if_Statements" class="nav-link">if Statements</a></li>
+            <li><a href="#for_Statements" class="nav-link">for Statements</a></li>
+            <li><a href="#Standard_Modules" class="nav-link">Standard Modules</a></li>
+            <li><a href="#Syntax_Errors" class="nav-link">Syntax Errors</a></li>
+            <li><a href="#Coding_Style" class="nav-link">Coding Style</a></li>
+          </ul>
+        </main>
+      </nav>
     <main id= "main-doc">
         <section class="main-section" id="Introduction">
-            <header class="home">
-                <h1>Python Tutorial</h1>
+            <header> 
+              <h2>Introduction</h2>
             </header>
             <div>
-                <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="python logo">
-                <h2>Introduction</h2>
+                <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" style="width: 100%; height: auto;" alt="python logo">
+               
                 <p>Python is an <strong>easy to learn</strong>, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.</p>
 
                 <p>Python is an <strong>interpreted language</strong>, which can save you considerable time during program development because no compilation and linking is necessary. The interpreter can be used interactively, which makes it easy to experiment with features of the language, to write throw-away programs, or to test functions during bottom-up program development. It is also a handy desk calculator.<p>
@@ -29,29 +47,143 @@
                 <p>The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages callable from C). Python is also suitable as an extension language for customizable applications.</p>
             </div>
         </section>
-        <section class="main-section">
+        <section class="main-section" id="Numbers">
             <header>
-            
+              <h2>Numbers</h2>
             </header>
             <div>
-            
+              <p>The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators +, -, * and / work just like in most other languages (for example, Pascal or C); parentheses (()) can be used for grouping. For example:</p>
+              <div class="code">
+              <code>>>> 2 + 2 </code><br>
+                <code>4</code><br>
+                <code>>>> 50 - 5*6</code><br>
+                <code>20</code><br>
+                <code>>>> (50 - 5*6) / 4</code><br>
+               <code>5.0</code><br>
+                <code>>>> 8 / 5  # division always returns a floating point number</code><br>
+                <code>1.6</code><br>  
+              
+              </div>
             </div>
         </section>
-        <section class="main-section">
+        <section class="main-section" id="First_Steps_Towards_Programming">
             <header>
-            
+              <h2>First Steps Towards Programming</h2>
             </header>
             <div>
-            
+              <p>Of course, we can use Python for more complicated tasks than adding two and two together. For instance, we can write an initial sub-sequence of the Fibonacci series as follows:</p>
+              <div class="code">
+                <code>>>> # Fibonacci series:</code><br>
+                <code>... # the sum of two elements defines the next</code><br>
+                <code>... a, b = 0, 1</code><br>
+                <code>>>> while a &lt; 10: </code><br>
+                <code>...     print(a)</code><br>
+                <code>...     a, b = b, a+b</code><br>
+                <code>...</code><br>
+                <code>0</code><br>
+                <code>1</code><br>
+                <code>1</code><br>
+                <code>2</code><br>
+                <code>3</code><br>
+                <code>5</code><br>
+                <code>8</code><br>
+              </div>
             </div>
         </section>
-        <section class="main-section">
+        <section class="main-section" id="if_Statements">
             <header>
-            
+                <h2><code>if</code> Statements</h2>
             </header>
             <div>
-            
+                <p>Besides the <code>while</code> statement just introduced, Python knows the usual control flow statements known from other languages, with some twists.</p>
+            		<p>Perhaps the most well-known statement type is the <code>if</code> statement. For example:</p>
+                <div class="code">
+                 <code> >>> x = int(input("Please enter an integer: "))</code><br>
+                  <code>Please enter an integer: 42</code><br>
+                  <code> >>> if x 	&lt; 0:</code><br>
+                  <code> ...     x = 0</code><br>
+                  <code>...     print('Negative changed to zero')</code><br>
+                  <code>... elif x == 0:</code><br>
+                  <code>...     print('Zero')</code><br>
+                  <code>... elif x == 1:</code><br>
+                  <code>...     print('Single')</code><br>
+                  <code>... else:</code><br>
+                  <code>...     print('More')</code><br>
+                  <code>...</code><br>
+                  <code>More</code><br>
+                </div>
             </div>        
+        </section>
+        <section class="main-section" id="for_Statements">
+            <header>
+              <h2><code>for</code> Statements</h2>
+            </header>
+            <div>
+              <p>The <code>for</code> statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s <code>for</code> statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):</p>
+              <div class="code">
+                <code>>>> # Measure some strings:</code><br>
+                <code>... words = ['cat', 'window', 'defenestrate']</code><br>
+                <code>>>> for w in words:</code><br>
+                <code>...     print(w, len(w))</code><br>
+                <code>...</code><br>
+                <code>cat 3</code><br>
+                <code>window 6</code><br>
+                <code>defenestrate 12</code><br>
+              </div>
+            </div>        
+        </section>
+        <section class="main-section" id="Standard_Modules">
+            <header>
+              <h2>Standard Modules</h2>
+            </header>
+            <div>
+              <p>Python comes with a library of standard modules, described in a separate document, the Python Library Reference (“Library Reference” hereafter). Some modules are built into the interpreter; these provide access to operations that are not part of the core of the language but are nevertheless built in, either for efficiency or to provide access to operating system primitives such as system calls. The set of such modules is a configuration option which also depends on the underlying platform. For example, the <code>winreg</code> module is only provided on Windows systems. One particular module deserves some attention: <code>sys</code>, which is built into every Python interpreter. The variables <code>sys.ps1</code> and <code>sys.ps2</code> define the strings used as primary and secondary prompts:</p>
+              <div class="code">
+                <code>>>> import sys</code><br>
+                <code>>>> sys.ps1</code><br>
+                <code>'>>> '</code><br>
+                <code>>>> sys.ps2</code><br>
+                <code>'... '</code><br>
+                <code>>>> sys.ps1 = 'C> '</code><br>
+                <code>C> print('Yuck!')</code><br>
+                <code>Yuck!</code><br>
+                <code>C></code><br>
+              </div>
+            </div>        
+        </section>
+        <section class="main-section" id="Syntax_Errors">
+            <header>
+              <h2>Syntax Errors</h2>
+            </header>
+            <div>
+              <p>Syntax errors, also known as parsing errors, are perhaps the most common kind of complaint you get while you are still learning Python:</p>
+              <div class="code">
+                <code>>>> while True print('Hello world')</code><br>
+                <code>File "&lt;stdin&gt;", line 1</code><br>
+                <code>	&nbsp;while True print('Hello world')</code><br>
+                <code> &nbsp;&nbsp;&nbsp;&nbsp;     ^</code><br>
+                <code>SyntaxError: invalid syntax</code><br>
+              </div>
+              <p>The parser repeats the offending line and displays a little ‘arrow’ pointing at the earliest point in the line where the error was detected. The error is caused by (or at least detected at) the token preceding the arrow: in the example, the error is detected at the function <code>print()</code>, since a colon (':') is missing before it. File name and line number are printed so you know where to look in case the input came from a script.</p>
+            </div>        
+        </section>
+        <section class="main-section" id="Coding_Style">
+            <header>
+              <h2>Coding Style</h2>
+            </header>
+            <div>
+              <p>Now that you are about to write longer, more complex pieces of Python, it is a good time to talk about <em>coding style</em>. Most languages can be written (or more concise, <em>formatted</em>) in different styles; some are more readable than others. Making it easy for others to read your code is always a good idea, and adopting a nice coding style helps tremendously for that.</p>
+              <p>For Python, <strong>PEP</strong> 8 has emerged as the style guide that most projects adhere to; it promotes a very readable and eye-pleasing coding style. Every Python developer should read it at some point; here are the most important points extracted for you:</p>
+              <ul>
+                <li><p>Use 4-space indentation, and no tabs.</p>
+                <p>4 spaces are a good compromise between small indentation (allows greater nesting depth) and large indentation (easier to read). Tabs introduce confusion, and are best left out.</p></li>
+                <li><p>Wrap lines so that they don’t exceed 79 characters.</p>
+                    <p>This helps users with small displays and makes it possible to have several code files side-by-side on larger displays.</p></li>
+                <li><p>Use blank lines to separate functions and classes, and larger blocks of code inside functions.</p></li>
+                <li><p>When possible, put comments on a line of their own.</p></li>
+                <li><p>Use docstrings</p></li>
+              </ul>    
+            </div>    
         </section>
         <footer id="footer">
         <a href="https://docs.python.org/3/tutorial/">Learn more..</a>
