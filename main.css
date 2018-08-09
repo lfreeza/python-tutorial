@@ -11,6 +11,7 @@ body{
 }
 
 #navbar{
+  position: fixed;
   grid-column: 1;
   height: 100%;
   border-right: solid 3px dimgrey;
@@ -66,6 +67,7 @@ body{
   }
   
   #navbar{
+    position: static;
     grid-column: 1;
     grid-row: 1;
     height:auto;
